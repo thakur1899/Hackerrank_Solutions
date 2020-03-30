@@ -1,0 +1,67 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution{
+
+    // Complete the miniMaxSum function below.
+    static void miniMaxSum(int[] arr) {
+
+        long f=0,l=0;
+        Arrays.sort(arr);
+        for(int i=0;i<arr.length-1;i++){
+            f=f+arr[i];
+        }
+        for(int i=1;i<arr.length;i++){
+            l=l+arr[i];
+        }
+      /*  int b[]=new int[5];
+        int sumarr []=new int[5];
+        int sum=0,temp=0;
+        b=Arrays.copyOf(arr,5);
+        for(int i=0;i<5;i++){
+            b[i]=0;
+            for(int j =0;j<5;j++){
+                sum=sum+arr[j];
+
+            }
+            sumarr[i]=sum;
+        }*/
+        //for(int k=0;k<5;k++){
+            // if(sumarr[k]>sumarr[k+1]){
+            //     temp=arr[k];
+            //     arr[k]=arr[k+1];
+            //     arr[k+1]=temp;
+            // }
+            // Sy
+           // Arrays.sort(sumarr);
+            System.out.println(f+" "+l);
+        }
+
+        
+
+
+    
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int[] arr = new int[5];
+
+        String[] arrItems = scanner.nextLine().split(" ");
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
+        for (int i = 0; i < 5; i++) {
+            int arrItem = Integer.parseInt(arrItems[i]);
+            arr[i] = arrItem;
+        }
+
+        miniMaxSum(arr);
+
+        scanner.close();
+    }
+}
